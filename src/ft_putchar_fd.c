@@ -1,41 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 14:59:55 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/11 20:36:49 by mattig           ###   ########.fr       */
+/*   Created: 2021/12/11 20:30:21 by mattig            #+#    #+#             */
+/*   Updated: 2021/12/11 20:32:25 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-int	ft_printf(const char *input, ...)
+void	ft_putchar_fd(char c, int fd)
 {
-	va_list ap;
-
-	va_start(ap, input);
-
-	while (*input)
-	{
-		if (*input == '%')
-		{
-			input++;
-			// Check Format caractere
-			ft_putchar_fd('X', 1);
-		}
-		else
-		{
-			ft_putchar_fd(*input, 1);
-		}
-		input++;
-	}
-
-	//TODO: Lire la chaine de caractere 
-	//TODO: Check le c deriere le % (voit avec va_list ??)
-	//TODO: TRaiter en focntion 
-	//TODO: Return le nombre en fonction 
-	return (0);
+	write(1, &c, fd);
 }
