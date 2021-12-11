@@ -6,7 +6,7 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 18:05:52 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/11 18:11:41 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/11 19:08:51 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	main(void)
 {
-	printf("Ceci est test");
-	ft_printf("Ceci est un test");
+	printf("dsdsds\n");
 }
