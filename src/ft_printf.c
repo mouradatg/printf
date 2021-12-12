@@ -6,7 +6,7 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:59:55 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/11 20:36:49 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/12 11:11:53 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	ft_printf(const char *input, ...)
 		{
 			input++;
 			// Check Format caractere
-			ft_putchar_fd('X', 1);
 		}
 		else
 		{
