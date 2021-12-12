@@ -6,7 +6,7 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 14:59:55 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/12 16:44:44 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/12 17:44:34 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,22 @@ int	ft_printf(const char *input, ...)
 {
 	va_list	ap;
 	int		i;
+	int		count;
 
 	va_start(ap, input);
-	i = 0;
+	i 		= 0;
+	count 	= 0;
 	while (input[i] != '\0')
 	{
 		if (input[i] == '%')
 		{
 			// Check the format
-			ft_check_format(input[i + 1]);
+			count += ft_check_format(input[i + 1], &ap);
 			i += 2;
 		}
 		else
 		{
-			ft_putchar(input[i]);
+			count += ft_putchar(input[i]);
 			i++;
 		}
 	}
@@ -38,5 +40,6 @@ int	ft_printf(const char *input, ...)
 	//TODO: TRaiter en focntion 
 	//TODO: Definir des Int pour compter les impression
 	//TODO: Return le nombre en fonction 
-	return (0);
+	va_end(ap);
+	return (count);
 }

@@ -6,13 +6,14 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:30:21 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/12 16:49:33 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/12 17:30:15 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
