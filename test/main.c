@@ -6,7 +6,7 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 18:05:52 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/11 20:15:26 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/12 17:51:43 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(void)
 {
-	char c;
-
-	c = 'd';
-	ft_printf("ceci est un test %c", c);
+	int a = printf("%s \n", "12345678910");
+	int b = ft_printf("%s \n", "12345678910");
+	printf("%d %d \n", a, b);
+	return (0);
 }

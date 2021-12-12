@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_check_format.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 18:08:45 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/12 17:49:26 by mattig           ###   ########.fr       */
+/*   Created: 2021/12/12 16:45:39 by mattig            #+#    #+#             */
+/*   Updated: 2021/12/12 17:50:02 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../inc/ft_printf.h"
 
-# include <stdio.h>
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_check_format(char c, va_list *ptr)
+{
+	int	count;
 
-int		ft_printf(const char *input, ...);
-int		ft_putchar(char c);
-int		ft_check_format(char c, va_list *ptr);
-int		ft_putstr(char *str);
-
-#endif
+	count = 0;
+	if (c == 'c')
+		count = ft_putchar(va_arg(*ptr, int));
+	else if (c == 's')
+		count = ft_putstr(va_arg(*ptr, char *));
+	else
+	{
+		printf("\n Traitement en cours sur ce format \n");
+	}
+	return (count);
+}
