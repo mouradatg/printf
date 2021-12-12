@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 18:08:45 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/12 16:01:12 by mattig           ###   ########.fr       */
+/*   Created: 2021/12/11 20:30:21 by mattig            #+#    #+#             */
+/*   Updated: 2021/12/12 16:49:33 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../inc/ft_printf.h"
 
-# include <stdio.h>
-# include <stdarg.h>
-# include <unistd.h>
-
-int		ft_printf(const char *input, ...);
-
-void	ft_putchar(char c);
-void	ft_check_format(char c);
-
-#endif
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}

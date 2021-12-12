@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_check_format.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 20:30:21 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/11 20:32:25 by mattig           ###   ########.fr       */
+/*   Created: 2021/12/12 16:45:39 by mattig            #+#    #+#             */
+/*   Updated: 2021/12/12 16:55:22 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_check_format(char c)
 {
-	write(1, &c, fd);
+	if (c == 'c')
+	{
+		// TODO: Traitement du caractere
+	}
+	else
+	{
+		printf("\n Traitement en cours sur ce format \n");
+	}
 }
