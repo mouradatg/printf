@@ -6,7 +6,7 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 16:45:39 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/12 17:50:02 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/13 19:06:40 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ int	ft_check_format(char c, va_list *ptr)
 	count = 0;
 	if (c == 'c')
 		count = ft_putchar(va_arg(*ptr, int));
-	else if (c == 's')
+	if (c == 's')
 		count = ft_putstr(va_arg(*ptr, char *));
-	else
-	{
-		printf("\n Traitement en cours sur ce format \n");
-	}
+	if (c == '%')
+		count = ft_putchar('%');
 	return (count);
 }
