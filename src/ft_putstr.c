@@ -6,7 +6,7 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 17:47:04 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/13 22:09:04 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/16 17:13:03 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putstr(char *str)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i] != '\0' && *str)

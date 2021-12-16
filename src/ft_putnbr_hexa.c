@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_hexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 18:08:45 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/16 17:48:06 by mattig           ###   ########.fr       */
+/*   Created: 2021/12/16 17:10:29 by mattig            #+#    #+#             */
+/*   Updated: 2021/12/16 17:50:47 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../inc/ft_printf.h"
 
-# include <stdio.h>
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_putnbr_hexa(unsigned int nbr, int upper)
+{
+	int	count;
 
-int		ft_printf(const char *input, ...);
-int		ft_putchar(char c);
-int		ft_check_format(char c, va_list *ptr);
-int		ft_putstr(char *str);
-int		ft_putnbr(int nbr);
-int		ft_putnbr_unsigned(unsigned int nbr);
-int		ft_putnbr_hexa(unsigned int nbr, int upper);
-
-#endif
+	count = 0;
+	if (nbr >= 16)
+		count += ft_putnbr_hexa(nbr / 16, upper);
+	if (upper == 'x')
+		count += ft_putchar("0123456789abcdef"[nbr % 16]);
+	else
+		count += ft_putchar("0123456789ABCDEF"[nbr % 16]);
+	return (count);
+}

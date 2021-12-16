@@ -1,7 +1,7 @@
 NAME		= printf
 
 SRCS		= test/main.c src/ft_printf.c src/ft_putchar.c src/ft_check_format.c \
-			src/ft_putstr.c src/ft_putnbr.c
+			src/ft_putstr.c src/ft_putnbr.c src/ft_putnbr_hexa.c
 
 FLAGS		= -Wall -Werror -Wextra
 
