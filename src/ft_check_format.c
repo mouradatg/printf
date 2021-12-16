@@ -6,7 +6,7 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 16:45:39 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/13 19:06:40 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/13 22:27:07 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ int	ft_check_format(char c, va_list *ptr)
 
 	count = 0;
 	if (c == 'c')
-		count = ft_putchar(va_arg(*ptr, int));
+		count += ft_putchar(va_arg(*ptr, int));
 	if (c == 's')
-		count = ft_putstr(va_arg(*ptr, char *));
+		count += ft_putstr(va_arg(*ptr, char *));
 	if (c == '%')
-		count = ft_putchar('%');
+		count += ft_putchar('%');
+	if (c == 'i' || c == 'd')
+		count += ft_putnbr(va_arg(*ptr, int));
+	if (c == 'u')
+		count += ft_putnbr_unsigned(va_arg(*ptr, unsigned int));
 	return (count);
 }

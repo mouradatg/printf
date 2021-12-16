@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 18:05:52 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/13 22:30:07 by mattig           ###   ########.fr       */
+/*   Created: 2021/12/13 19:40:54 by mattig            #+#    #+#             */
+/*   Updated: 2021/12/13 22:08:35 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-int	main(void)
+int	ft_putnbr(int nbr)
 {
-	int nbr = -1548;
-	// char c = 'C';
-	// char *str = "dgsdsds";
+	unsigned int	count;
 
-	int a = printf("test %u", nbr);
-	printf("\n");
-	int b = ft_printf("test %u", nbr);
-	printf("\nprintf return : %d", a);
-	printf("\nmy printf return : %d", b);
-	return (0);
+	count = 0;
+	if (nbr < 0)
+	{
+		count += ft_putchar('-');
+		nbr *= -1;
+	}
+	if (nbr >= 10)
+		count += ft_putnbr(nbr / 10);
+	count += ft_putchar(nbr % 10 + 48);
+	return (count);
+}
+
+int	ft_putnbr_unsigned(unsigned int nbr)
+{
+	unsigned int	count;
+
+	count = 0;
+	if (nbr >= 10)
+		count += ft_putnbr(nbr / 10);
+	count += ft_putchar(nbr % 10 + 48);
+	return (count);
 }
