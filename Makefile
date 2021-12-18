@@ -1,25 +1,28 @@
-NAME		= printf
+NAME	= libftprintf.a
 
-SRCS		= test/main.c src/ft_printf.c src/ft_putchar.c src/ft_check_format.c \
-			src/ft_putstr.c src/ft_putnbr.c src/ft_putnbr_hexa.c
+SRCS	= src/ft_printf.c src/ft_putchar.c src/ft_check_format.c \
+		src/ft_putstr.c src/ft_putnbr.c src/ft_putnbr_hexa.c
 
-FLAGS		= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra
 
-CC			= gcc
+CC		= gcc
 
-OBJS		= ${SRCS:.c=.o}
+OBJS	= ${SRCS:.c=.o}
 
-all			: $(NAME)
+all		: $(NAME)
 
-${NAME} 	: $(OBJS)
-	$(CC) $(FLAGS) -o $(NAME) $(SRCS)
+%.o		: %.c
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCLD_DIR)
 
-clean		:
-	rm -f $(OBJS)
+$(NAME) : $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-fclean		: clean
+clean 	:
+	rm -f $(SRCS:.c=.o)
+
+fclean	: clean
 	rm -f $(NAME)
 
-re 			: fclean all
+re : fclean all
 
-.PHONY		: all clean fclean re
+.PHONY : all clean fclean re
