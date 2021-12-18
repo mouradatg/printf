@@ -6,7 +6,7 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:40:54 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/13 22:08:35 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/18 17:13:09 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	ft_putnbr(int nbr)
 		count += ft_putchar('-');
 		nbr *= -1;
 	}
-	if (nbr >= 10)
-		count += ft_putnbr(nbr / 10);
-	count += ft_putchar(nbr % 10 + 48);
+	count += ft_putnbr_unsigned(nbr);
 	return (count);
 }
 
@@ -34,7 +32,7 @@ int	ft_putnbr_unsigned(unsigned int nbr)
 
 	count = 0;
 	if (nbr >= 10)
-		count += ft_putnbr(nbr / 10);
+		count += ft_putnbr_unsigned(nbr / 10);
 	count += ft_putchar(nbr % 10 + 48);
 	return (count);
 }
