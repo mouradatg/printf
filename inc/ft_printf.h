@@ -6,14 +6,13 @@
 /*   By: mattig <mattig@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 18:08:45 by mattig            #+#    #+#             */
-/*   Updated: 2021/12/18 16:32:40 by mattig           ###   ########.fr       */
+/*   Updated: 2021/12/18 17:18:39 by mattig           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
 # include <stdarg.h>
 # include <unistd.h>
 
